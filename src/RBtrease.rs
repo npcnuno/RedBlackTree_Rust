@@ -88,7 +88,7 @@ where
 
     fn size(&self, node: &Option<Box<Node<K, V>>>) -> i32 {
         match node {
-            Some(n) => n.size,
+            Some(n) => n.size(),
             None => 0,
         }
     }
@@ -426,7 +426,7 @@ where
         }
     }
 
-    pub fn Ceiling(&self, key: &K) -> K {
+    pub fn ceiling(&self, key: &K) -> K {
         //if self.is_empty() {
         //
         //}
@@ -442,7 +442,7 @@ where
     }
 
     pub fn select(&self, rank: i32) -> K {
-        if (rank < 0 || rank >= self.tree_size()) {
+        if rank < 0 || rank >= self.tree_size() {
             panic!("Select function ERROR: rank < 0 or rank > tree size")
         }
 

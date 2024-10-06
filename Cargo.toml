@@ -1,3 +1,4 @@
+workspace = { members = ["src"] }
 [package]
 name = "rbtree"
 version = "0.1.0"
